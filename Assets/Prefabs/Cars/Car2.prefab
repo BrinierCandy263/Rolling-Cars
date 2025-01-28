@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3920659882497164493}
   - component: {fileID: 8679254338054761530}
   - component: {fileID: 2975499612782114419}
-  - component: {fileID: 512318407561844343}
   m_Layer: 3
   m_Name: ParticleSystemSparkRightWheelCar2
   m_TagString: WheelTrail
@@ -4840,19 +4839,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &512318407561844343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2963293545849928073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3530621bcb7c24cf9b9d7a11832e8797, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nitroActivationButton: 112
 --- !u!1 &7859880687449761035
 GameObject:
   m_ObjectHideFlags: 0
@@ -5024,6 +5010,8 @@ GameObject:
   - component: {fileID: 7859880688753285568}
   - component: {fileID: 7859880688753285569}
   - component: {fileID: 7796910817320748477}
+  - component: {fileID: 2945625287651710649}
+  - component: {fileID: 4094332472465280725}
   m_Layer: 6
   m_Name: Car2
   m_TagString: Car2
@@ -5119,8 +5107,6 @@ MonoBehaviour:
   turnFactor: 2.55
   maxSpeed: 27
   nitroBoost: 1.5
-  particleSystemControllerLeftWheel: {fileID: 484893373251654101}
-  particleSystemControllerRightWheel: {fileID: 512318407561844343}
 --- !u!50 &7859880688753285569
 Rigidbody2D:
   serializedVersion: 4
@@ -5224,6 +5210,35 @@ PolygonCollider2D:
       - {x: 1.04, y: -2.325}
       - {x: 1.16, y: -2.195}
   m_UseDelaunayMesh: 0
+--- !u!114 &2945625287651710649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7859880688753285573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3530621bcb7c24cf9b9d7a11832e8797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nitroActivationButton: 112
+  nitroDuration: 5
+  nitroCoolDownTime: 20
+  leftWheelParticleSystem: {fileID: 8030756881695196337}
+  rightWheelParticleSystem: {fileID: 2975499612782114419}
+--- !u!114 &4094332472465280725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7859880688753285573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1cf475b0f234961a3fab8c0685b7ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7859880689554252577
 GameObject:
   m_ObjectHideFlags: 0
@@ -5393,7 +5408,6 @@ GameObject:
   - component: {fileID: 1335819303985448958}
   - component: {fileID: 1614250279101172566}
   - component: {fileID: 8030756881695196337}
-  - component: {fileID: 484893373251654101}
   m_Layer: 3
   m_Name: ParticleSystemSparkLeftWheelCar2
   m_TagString: WheelTrail
@@ -10222,16 +10236,3 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &484893373251654101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8982755972149431177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3530621bcb7c24cf9b9d7a11832e8797, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nitroActivationButton: 112

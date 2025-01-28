@@ -10,8 +10,9 @@ using UnityEngine;
 public static class AudioManager
 {
     //declare fields
-    private static bool initialized = false;
-    private static AudioSource audioSource;
+    private static bool _initialized = false;
+    private static AudioSource _audioSource;
+
     private static Dictionary<AudioClipName, AudioClip> audioClips =
         new Dictionary<AudioClipName, AudioClip>();
 
@@ -20,7 +21,7 @@ public static class AudioManager
     /// </summary>
     public static bool Initialized
     {
-        get { return initialized; }
+        get { return _initialized; }
     }
 
     /// <summary>
@@ -29,8 +30,8 @@ public static class AudioManager
     /// <param name="source">audio source</param>
     public static void Initialize(AudioSource source)
     {
-        initialized = true;
-        audioSource = source;
+        _initialized = true;
+        _audioSource = source;
 
         Array audioClipsNames = Enum.GetValues(typeof(AudioClipName));
 
@@ -46,6 +47,6 @@ public static class AudioManager
     /// <param name="name">name of the audio clip to play</param>
     public static void Play(AudioClipName name)
     {
-        audioSource.PlayOneShot(audioClips[name]);
+        _audioSource.PlayOneShot(audioClips[name]);
     }
 }

@@ -7,21 +7,28 @@ using UnityEngine.UI;
 /// WinMenu script // pause game the game, Shows elapsed time
 /// and which player wins , and can restart game
 /// </summary>
-public class WinMenu : MenuManager
+public sealed class WinMenu : MenuManager
 {
-    [SerializeField] Text winPlayerText;
-    [SerializeField] Text elapsedTimeText;
-    [SerializeField] Text restartButtonText;
-    [SerializeField] Text quitButtonText;
+    [SerializeField] private Text winPlayerText;
+    [SerializeField] private Text elapsedTimeText;
+    [SerializeField] private Text restartButtonText;
+    [SerializeField] private Text quitButtonText;
 
-    [SerializeField] Image backGroundImage;
-    [SerializeField] Sprite backGroundLightMode;
-    [SerializeField] Sprite backGroundDarkMode;
+    [SerializeField] private Image backGroundImage;
+    [SerializeField] private Sprite backGroundLightMode;
+    [SerializeField] private Sprite backGroundDarkMode;
 
-    void Awake()
+    private GameObject _dividerLine;
+
+    private void Awake()
     {
+        _dividerLine = GameObject.FindGameObjectWithTag("DividerLine");
+        if (_dividerLine == null) Debug.LogError("No Divider lIne found with the 'DividerLine' tag.");
+
         //Pause the game when added to the scene
         Time.timeScale = 0;
+
+        _dividerLine.SetActive(false);
 
         //Switch Color Mode and Win Text on Awake
         SwitchColorMode();
@@ -79,7 +86,7 @@ public class WinMenu : MenuManager
         //Unpause game, destroy menu, and go to main menu
         Time.timeScale = 1;
         Destroy(gameObject);
-        MenuManager.initializedWinMessage = false;
+        MenuManager._initializedWinMessage = false;
         MenuManager.SwitchToScene(MenuName.MainMenu);
     }
 
@@ -95,7 +102,7 @@ public class WinMenu : MenuManager
             TextManager.SetZeroValues();
 
             //Restarting Game
-            MenuManager.initializedWinMessage = false;
+            MenuManager._initializedWinMessage = false;
             MenuManager.SwitchToScene(MenuName.GameLightMode);
             Time.timeScale = 1;
        }
@@ -106,7 +113,7 @@ public class WinMenu : MenuManager
             TextManager.SetZeroValues();
 
             //Restarting Game
-            MenuManager.initializedWinMessage = false;
+            MenuManager._initializedWinMessage = false;
             MenuManager.SwitchToScene(MenuName.GameDarkMode);
             Time.timeScale = 1;
        }

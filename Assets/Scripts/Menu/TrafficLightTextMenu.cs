@@ -29,7 +29,7 @@ public class TrafficLightTextMenu : MenuManager
 
         //Disabling HUD and cars
         HUD.SetActive(false);
-        initializedTrafficLightTextMenu = true;
+        _initializedTrafficLightTextMenu = true;
 
         carInputHandler.enabled = false;
         carInputHandler2.enabled = false;
@@ -49,7 +49,7 @@ public class TrafficLightTextMenu : MenuManager
         if (trafficLightTimer.Finished)
         {
             HUD.SetActive(true);
-            initializedTrafficLightTextMenu = false;
+            _initializedTrafficLightTextMenu = false;
 
             carInputHandler.enabled = true;
             carInputHandler2.enabled = true;

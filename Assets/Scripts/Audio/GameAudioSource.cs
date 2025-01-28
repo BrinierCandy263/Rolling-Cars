@@ -6,7 +6,7 @@ using UnityEngine;
 /// Game Audio Source // An audio source
 /// for the entire game
 /// </summary>
-public class GameAudioSource : MonoBehaviour
+public sealed class GameAudioSource : MonoBehaviour
 {
     void Awake()
     {

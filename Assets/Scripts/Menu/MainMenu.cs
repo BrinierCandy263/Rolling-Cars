@@ -6,14 +6,14 @@ using UnityEngine;
 /// MainMenu script // The Main Menu which process
 /// Quit Button, Play Button and Settings Button
 /// </summary>
-public class MainMenu : MenuManager
+public sealed class MainMenu : MenuManager
 {
-    TextManager textManager;
+    private TextManager _textManager;
 
-    void Awake()
+    private void Awake()
     {
         Cursor.visible = true;
-        textManager = new TextManager();
+        _textManager = new TextManager();
     }
 
     /// <summary>

@@ -12,6 +12,8 @@ TagManager:
   - Car1
   - Car2
   - Particle
+  - SparkPool
+  - DividerLine
   layers:
   - Default
   - TransparentFX

@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class CarInputHandler2 : TopDownCarController
 {
-    void Update()
+    private void Update()
     {
         //Setting control by SetInputVector Method
         Vector2 inputVector = Vector2.zero;

@@ -9,27 +9,15 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class MenuManager : MonoBehaviour
 {
-    //declare fields
-    protected static bool initializedPauseMenu = false;
-    protected static bool initializedWinMessage = false;
-    protected static bool initializedTrafficLightTextMenu = false;
+    protected static bool _initializedPauseMenu = false;
+    protected static bool _initializedWinMessage = false;
+    protected static bool _initializedTrafficLightTextMenu = false;
+
     protected static ColorMode colorMode;
 
-    //declare Properties
-    public static bool InitializedPauseMenu
-    {
-        get { return initializedPauseMenu; }
-    }
-
-    public static bool InitializedWinMessage
-    {
-        get { return initializedWinMessage; }
-    }
-
-    public static bool InitializedTrafficLightTextMenu
-    {
-        get { return initializedTrafficLightTextMenu; }
-    }
+    public static bool InitializedPauseMenu {get => _initializedPauseMenu;}
+    public static bool InitializedWinMessage {get => _initializedWinMessage;}
+    public static bool InitializedTrafficLightTextMenu {get => _initializedTrafficLightTextMenu;}
 
     public static ColorMode ColorMode
     {
@@ -84,11 +72,11 @@ public class MenuManager : MonoBehaviour
                 }
             case MenuName.Pause:
                 {
-                    if (!initializedPauseMenu)
+                    if (!_initializedPauseMenu)
                     {
                         //Instantiate prefab of PauseMenu
                         Object.Instantiate(Resources.Load("PauseMenu"));
-                        initializedPauseMenu = true;
+                        _initializedPauseMenu = true;
                     }
                     break;
                 }
@@ -97,7 +85,7 @@ public class MenuManager : MonoBehaviour
                 {
                     //Instantiate prefab of WinMessage
                     Object.Instantiate(Resources.Load("WinMessage"));
-                    initializedWinMessage = true;
+                    _initializedWinMessage = true;
                     break;
                 }
         

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8841687604838818768}
   - component: {fileID: 1969170067322011623}
   - component: {fileID: 435421325572769222}
-  - component: {fileID: 6331536529065811995}
   m_Layer: 3
   m_Name: ParticleSystemSparkRightWheelCar1
   m_TagString: WheelTrail
@@ -28,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1401186815488763803}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
-  m_LocalPosition: {x: -0.68, y: -2.4000003, z: 0}
+  m_LocalPosition: {x: 0.68, y: -2.4000003, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -945,7 +944,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 35
+      scalar: 100
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4840,19 +4839,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &6331536529065811995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401186815488763803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3530621bcb7c24cf9b9d7a11832e8797, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nitroActivationButton: 107
 --- !u!1 &3084666731321476874
 GameObject:
   m_ObjectHideFlags: 0
@@ -4866,6 +4852,8 @@ GameObject:
   - component: {fileID: 3084666731321476877}
   - component: {fileID: 3084666731321476878}
   - component: {fileID: 2816989628729418137}
+  - component: {fileID: 3921606883427740913}
+  - component: {fileID: 8873351437383909778}
   m_Layer: 6
   m_Name: Car1
   m_TagString: Car1
@@ -4961,8 +4949,6 @@ MonoBehaviour:
   turnFactor: 2.55
   maxSpeed: 27
   nitroBoost: 1.5
-  particleSystemControllerLeftWheel: {fileID: 3235455470210071857}
-  particleSystemControllerRightWheel: {fileID: 6331536529065811995}
 --- !u!50 &3084666731321476878
 Rigidbody2D:
   serializedVersion: 4
@@ -5063,6 +5049,35 @@ PolygonCollider2D:
       - {x: 0.745, y: -2.54}
       - {x: 0.78499997, y: -2.5}
   m_UseDelaunayMesh: 0
+--- !u!114 &3921606883427740913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3084666731321476874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3530621bcb7c24cf9b9d7a11832e8797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nitroActivationButton: 107
+  nitroDuration: 5
+  nitroCoolDownTime: 20
+  leftWheelParticleSystem: {fileID: 665311255169824848}
+  rightWheelParticleSystem: {fileID: 435421325572769222}
+--- !u!114 &8873351437383909778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3084666731321476874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1cf475b0f234961a3fab8c0685b7ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3084666731575294698
 GameObject:
   m_ObjectHideFlags: 0
@@ -5390,7 +5405,6 @@ GameObject:
   - component: {fileID: 2238559568151647914}
   - component: {fileID: 6723802301234249172}
   - component: {fileID: 665311255169824848}
-  - component: {fileID: 3235455470210071857}
   m_Layer: 3
   m_Name: ParticleSystemSparkLeftWheelCar1
   m_TagString: WheelTrail
@@ -5407,7 +5421,7 @@ Transform:
   m_GameObject: {fileID: 9087543916840157368}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
-  m_LocalPosition: {x: 0.68, y: -2.4000003, z: 0}
+  m_LocalPosition: {x: -0.68, y: -2.4, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5495,7 +5509,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9087543916840157368}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 3
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -6119,7 +6133,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 10
+    angle: 15
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -6262,7 +6276,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 180
+      value: 50
       mode: 0
       spread: 0
       speed:
@@ -6324,7 +6338,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 35
+      scalar: 50
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -10219,16 +10233,3 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &3235455470210071857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9087543916840157368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3530621bcb7c24cf9b9d7a11832e8797, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nitroActivationButton: 107

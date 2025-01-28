@@ -9,14 +9,14 @@ using UnityEngine.UI;
 /// Quit Button , Volume Slider , Resolution Dropdown,
 /// Graphics Dropdown and FullScreen Toggle
 /// </summary>
-public class SettingsMenu : MenuManager
+public sealed class SettingsMenu : MenuManager
 {
-    [SerializeField] Dropdown resolutionDropdown;
-    [SerializeField] Dropdown graphicsDropdown;
-    [SerializeField] Slider volumeSlider;
+    [SerializeField] private Dropdown resolutionDropdown;
+    [SerializeField] private Dropdown graphicsDropdown;
+    [SerializeField] private Slider volumeSlider;
 
-    public AudioMixer audioMixer;
-    private Resolution[] resolutions;
+    public AudioMixer _audioMixer;
+    private Resolution[] _resolutions;
 
     /// <summary>
     /// Setting old values
@@ -34,19 +34,19 @@ public class SettingsMenu : MenuManager
     void Start()
     {
         int CurrentResolutionIndex = 0;
-        resolutions = Screen.resolutions.Select(resolution => new Resolution { width = resolution.width, height = resolution.height }).Distinct().ToArray();
+        _resolutions = Screen.resolutions.Select(resolution => new Resolution { width = resolution.width, height = resolution.height }).Distinct().ToArray();
 
         resolutionDropdown.ClearOptions();
 
         List<string> options = new List<string>();
 
-        for (int i = 0; i < resolutions.Length; i++)
+        for (int i = 0; i < _resolutions.Length; i++)
         {
-            string Option = resolutions[i].width + " x " + resolutions[i].height;
+            string Option = _resolutions[i].width + " x " + _resolutions[i].height;
             options.Add(Option);
 
-            if (resolutions[i].width == Screen.currentResolution.width &&
-                resolutions[i].height == Screen.currentResolution.height)
+            if (_resolutions[i].width == Screen.currentResolution.width &&
+                _resolutions[i].height == Screen.currentResolution.height)
             {
                 CurrentResolutionIndex = i;
             }
@@ -72,7 +72,7 @@ public class SettingsMenu : MenuManager
     /// <param name="ResolutionIndex"></param>
     public void HandleResolutionDropdownOnClickEvent(int ResolutionIndex)
     {
-        Resolution resolution = resolutions[ResolutionIndex];
+        Resolution resolution = _resolutions[ResolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
         PlayerPrefs.SetInt("ResoultionIndex", ResolutionIndex);
        
@@ -83,7 +83,7 @@ public class SettingsMenu : MenuManager
     /// <param name="volume"></param>
     public void HandleVolumeSliderOnClickEvent(float volume)
     {
-        audioMixer.SetFloat("volume", volume);
+        _audioMixer.SetFloat("volume", volume);
         PlayerPrefs.SetFloat("volume", volume);
         PlayerPrefs.Save();
     }
