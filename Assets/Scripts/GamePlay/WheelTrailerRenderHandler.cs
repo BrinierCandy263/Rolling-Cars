@@ -20,9 +20,11 @@ public sealed class WheelTrailerRenderHandler : MonoBehaviour
         _trailRenderer.emitting = false;
     }
 
+    
     //Checking if we can TireScreeching or not
     private void Update()
     {
         _trailRenderer.emitting = _topDownController.IsTireScreeching(out float lateralvelocity, out bool IsBraking);
     }
+    
 }

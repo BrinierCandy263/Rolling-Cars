@@ -15,9 +15,6 @@ public class SparkController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Car1") || collision.gameObject.CompareTag("Car2"))
-        {
-            Debug.Log("1");
             foreach (ContactPoint2D contact in collision.contacts)
             {
                 GameObject spark = _sparkPool.GetObject(contact.point, Quaternion.identity);
@@ -25,7 +22,6 @@ public class SparkController : MonoBehaviour
                 particleSystem.Play();
                 StartCoroutine(ReturnToPoolAfterDelay(spark, 1f));
             }
-        }
     }
 
     private IEnumerator ReturnToPoolAfterDelay(GameObject obj, float delay)

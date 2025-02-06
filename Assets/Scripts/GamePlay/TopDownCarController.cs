@@ -13,7 +13,7 @@ public class TopDownCarController : MonoBehaviour
     [SerializeField] private float turnFactor;
     [SerializeField] private float maxSpeed;
     [SerializeField] private float nitroBoost;
-    
+
     private NitroSystemController _nitroSystemController;
 
     private float _accelerationInput = 0;
@@ -22,6 +22,8 @@ public class TopDownCarController : MonoBehaviour
     private float _velocityVsUp = 0;
 
     private Rigidbody2D _rb;
+
+    public float MaxSpeed {get => maxSpeed;}
 
     private void Awake()
     {
@@ -44,27 +46,28 @@ public class TopDownCarController : MonoBehaviour
     /// </summary>
     private void ApplyEngineForce()
     {
-        // Create a force for the engine Vector2D
-        Vector2 engineForceVector = transform.up * _accelerationInput * accelerationFactor;
-        if(_nitroSystemController.IsNitroActive) engineForceVector *= nitroBoost;
-        
-        // Аpply force and pushes the car 
-        _rb.AddForce(engineForceVector, ForceMode2D.Force);
+        if(_nitroSystemController.IsNitroActive) _rb.AddForce(transform.up * _accelerationInput * accelerationFactor * nitroBoost
+        , ForceMode2D.Force);
 
-        // Caculate how much "forward" we are going in terms of the direction of our velocity
+         // Caculate how much "forward" we are going in terms of the direction of our velocity
         _velocityVsUp = Vector2.Dot(transform.up, _rb.velocity);
 
         //Limit so we cannot go faster than the max speed in the "forward" 
         if (_velocityVsUp > maxSpeed && _accelerationInput > 0) return;
 
         //Limit so we cannot go faster than the 50% of max speed in the "reverse" direction 
-        if (_velocityVsUp < maxSpeed * 0.5f && _accelerationInput < 0) return;
+        if (_velocityVsUp < -maxSpeed * 0.5f && _accelerationInput < 0) return;
 
         // Limit so we cannot go faster in any direction while accelerating
         if (_rb.velocity.sqrMagnitude > maxSpeed * maxSpeed && _accelerationInput > 0) return;
 
         //Calculate drag
         _rb.drag = _accelerationInput == 0 ? Mathf.Lerp(_rb.drag, 3.0f, Time.fixedDeltaTime * 3f) : 0f;
+        
+        // Create a force for the engine Vector2D
+        Vector2 engineForceVector = transform.up * _accelerationInput * accelerationFactor;        
+        // Аpply force and pushes the car 
+        _rb.AddForce(engineForceVector, ForceMode2D.Force);
     }
 
     /// <summary>
@@ -124,7 +127,7 @@ public class TopDownCarController : MonoBehaviour
 
         _rb.velocity = forwardVelocity + rightVelocity * driftFactor;
     }
-
+    
     /// <summary>
     /// Setting Control in Car Input Handler script
     /// </summary>
@@ -135,6 +138,7 @@ public class TopDownCarController : MonoBehaviour
         _accelerationInput = inputVector.y;
     }
 }
+
 
 
 

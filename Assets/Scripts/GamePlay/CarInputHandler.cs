@@ -8,6 +8,7 @@ using UnityEngine;
 /// </summary>
 public class CarInputHandler : TopDownCarController
 {
+    
     private void Update()
     {
         //Setting control by SetInputVector Method
@@ -18,4 +19,5 @@ public class CarInputHandler : TopDownCarController
 
         SetInputVector(inputVector);
     }
+    
 }

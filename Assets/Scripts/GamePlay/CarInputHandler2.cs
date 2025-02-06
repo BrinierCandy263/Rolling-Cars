@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ using UnityEngine;
 /// </summary>
 public class CarInputHandler2 : TopDownCarController
 {
+    
     private void Update()
     {
         //Setting control by SetInputVector Method
@@ -18,4 +20,6 @@ public class CarInputHandler2 : TopDownCarController
 
         SetInputVector(inputVector);
     }
+    
 }
+

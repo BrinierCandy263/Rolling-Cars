@@ -410,7 +410,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 40
+  orthographic size: 37
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -607,7 +607,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 40
+  orthographic size: 37
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -684,8 +684,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
-  m_LookaheadTime: 0
-  m_LookaheadSmoothing: 0
+  m_LookaheadTime: 0.213
+  m_LookaheadSmoothing: 19
   m_LookaheadIgnoreY: 0
   m_XDamping: 0.3
   m_YDamping: 0.3
@@ -765,7 +765,7 @@ MonoBehaviour:
   m_Follow: {fileID: 7859880687951280592}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 40
+    OrthographicSize: 37
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -1001,8 +1001,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
-  m_LookaheadTime: 0
-  m_LookaheadSmoothing: 0
+  m_LookaheadTime: 0.2
+  m_LookaheadSmoothing: 20
   m_LookaheadIgnoreY: 0
   m_XDamping: 0.3
   m_YDamping: 0.3
@@ -1379,7 +1379,7 @@ MonoBehaviour:
   m_Follow: {fileID: 3084666731594097666}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 40
+    OrthographicSize: 37
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -1671,11 +1671,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3084666731321476864, guid: ac649a2d63f224f1699d6efbf4d3e613, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 3084666731321476864, guid: ac649a2d63f224f1699d6efbf4d3e613, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 3084666731321476864, guid: ac649a2d63f224f1699d6efbf4d3e613, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1738,33 +1738,65 @@ PrefabInstance:
       value: 0.028530758
       objectReference: {fileID: 0}
     - target: {fileID: 3084666731321476877, guid: ac649a2d63f224f1699d6efbf4d3e613, type: 3}
+      propertyPath: drag
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084666731321476877, guid: ac649a2d63f224f1699d6efbf4d3e613, type: 3}
       propertyPath: maxSpeed
       value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 3084666731321476877, guid: ac649a2d63f224f1699d6efbf4d3e613, type: 3}
+      propertyPath: steering
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084666731321476877, guid: ac649a2d63f224f1699d6efbf4d3e613, type: 3}
+      propertyPath: tireGrip
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084666731321476877, guid: ac649a2d63f224f1699d6efbf4d3e613, type: 3}
       propertyPath: turnFactor
-      value: 2.55
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 3084666731321476877, guid: ac649a2d63f224f1699d6efbf4d3e613, type: 3}
       propertyPath: driftFactor
-      value: 0.33
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084666731321476877, guid: ac649a2d63f224f1699d6efbf4d3e613, type: 3}
+      propertyPath: acceleration
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3084666731321476877, guid: ac649a2d63f224f1699d6efbf4d3e613, type: 3}
       propertyPath: accelerationFactor
       value: 28.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084666731321476877, guid: ac649a2d63f224f1699d6efbf4d3e613, type: 3}
+      propertyPath: driftSteeringMultiplier
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3084666731321476878, guid: ac649a2d63f224f1699d6efbf4d3e613, type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: b45bff39416864ec78b2d8fd264787b0, type: 2}
     - target: {fileID: 3084666731321476878, guid: ac649a2d63f224f1699d6efbf4d3e613, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084666731321476878, guid: ac649a2d63f224f1699d6efbf4d3e613, type: 3}
       propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3084666731321476879, guid: ac649a2d63f224f1699d6efbf4d3e613, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084666731321476879, guid: ac649a2d63f224f1699d6efbf4d3e613, type: 3}
+      propertyPath: m_FlipY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084666731321476879, guid: ac649a2d63f224f1699d6efbf4d3e613, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 2548097094859114719, guid: ebfe5049cd74e4e94920baf09199c076, type: 3}
+      objectReference: {fileID: 919269037, guid: 750a2c8f6ba324344846e9ac6c6d4af3, type: 3}
     - target: {fileID: 3084666731321476879, guid: ac649a2d63f224f1699d6efbf4d3e613, type: 3}
       propertyPath: m_SortingLayer
       value: 5
@@ -1854,7 +1886,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.91, y: 5.72}
+    oldSize: {x: 7, y: 13.93}
     newSize: {x: 2.5904992, y: 5.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2037,11 +2069,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7859880688053007407, guid: a655f3de080084aed91fe1dcccb3caa5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7859880688053007407, guid: a655f3de080084aed91fe1dcccb3caa5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7859880688053007407, guid: a655f3de080084aed91fe1dcccb3caa5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2088,6 +2120,10 @@ PrefabInstance:
       value: 2.55
       objectReference: {fileID: 0}
     - target: {fileID: 7859880688753285568, guid: a655f3de080084aed91fe1dcccb3caa5, type: 3}
+      propertyPath: driftFactor
+      value: 0.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 7859880688753285568, guid: a655f3de080084aed91fe1dcccb3caa5, type: 3}
       propertyPath: accelerationFactor
       value: 28.5
       objectReference: {fileID: 0}
@@ -2100,9 +2136,17 @@ PrefabInstance:
       value: Car2
       objectReference: {fileID: 0}
     - target: {fileID: 7859880688753285582, guid: a655f3de080084aed91fe1dcccb3caa5, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7859880688753285582, guid: a655f3de080084aed91fe1dcccb3caa5, type: 3}
+      propertyPath: m_FlipY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7859880688753285582, guid: a655f3de080084aed91fe1dcccb3caa5, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -4504184271493437548, guid: ebfe5049cd74e4e94920baf09199c076, type: 3}
+      objectReference: {fileID: 665595051, guid: 6428340f1a88d4744a963a076faa80a8, type: 3}
     - target: {fileID: 7859880688753285582, guid: a655f3de080084aed91fe1dcccb3caa5, type: 3}
       propertyPath: m_SortingLayer
       value: 5
@@ -2180,7 +2224,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.14, y: 5.93}
+    oldSize: {x: 5.87, y: 12.4}
     newSize: {x: 2.2904415, y: 5.14}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
