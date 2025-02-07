@@ -1478,7 +1478,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9119946111890726478, guid: 995723b1fc79c4591ad7026bbb29dd5f, type: 3}
       propertyPath: maxSpeed
-      value: 70
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119946111890726478, guid: 995723b1fc79c4591ad7026bbb29dd5f, type: 3}
+      propertyPath: turnFactor
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119946111890726478, guid: 995723b1fc79c4591ad7026bbb29dd5f, type: 3}
+      propertyPath: driftFactor
+      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3500,15 +3508,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3990186313967647206, guid: ed96490cb092d4c6b80c68c3e186f619, type: 3}
       propertyPath: maxSpeed
-      value: 70
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 3990186313967647206, guid: ed96490cb092d4c6b80c68c3e186f619, type: 3}
       propertyPath: turnFactor
-      value: 2.6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3990186313967647206, guid: ed96490cb092d4c6b80c68c3e186f619, type: 3}
       propertyPath: driftFactor
-      value: 0.9
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 6217641758893375381, guid: ed96490cb092d4c6b80c68c3e186f619, type: 3}
       propertyPath: m_LocalPosition.x

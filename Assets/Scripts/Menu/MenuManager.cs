@@ -55,13 +55,13 @@ public class MenuManager : MonoBehaviour
             case (MenuName.GameLightMode):
                 {
                     //Go to Game White Mode Scene
-                    SceneManager.LoadScene("Scene0");
+                    SceneManager.LoadScene("Test");
                     break;
                 }
             case (MenuName.GameDarkMode):
                 {
                     //Go to Game Black Mode Scene
-                    SceneManager.LoadScene("Scene0_Dark");
+                    SceneManager.LoadScene("Test");
                     break;
                 }
             case (MenuName.Settings):
