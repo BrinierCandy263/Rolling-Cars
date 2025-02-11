@@ -8,8 +8,10 @@ using UnityEngine;
 public enum MenuName
 {
     MainMenu,
-    GameLightMode,
-    GameDarkMode,
+    MapSelector,
+    Level1,
+    Level2,
+    Level3,
     Pause,
     Settings,
     WinMessage

@@ -13,8 +13,7 @@ public sealed class NitroSystemController : MonoBehaviour
     [SerializeField] private float nitroDuration;
     [SerializeField] private float nitroCoolDownTime;
  
-    [SerializeField] private ParticleSystem leftWheelParticleSystem;
-    [SerializeField] private ParticleSystem rightWheelParticleSystem;
+    [SerializeField] private ParticleSystem nitroParticleSystem;
 
     // Update is called once per frame
     void Update()
@@ -27,15 +26,13 @@ public sealed class NitroSystemController : MonoBehaviour
         _isNitroActive = true;
         _canNitroBeUsed = false;
 
-        leftWheelParticleSystem.Play();
-        rightWheelParticleSystem.Play();
+        nitroParticleSystem.Play();
 
         yield return new WaitForSeconds(nitroDuration);
 
         // Revert to original speed
         _isNitroActive = false;
-        leftWheelParticleSystem.Stop();
-        rightWheelParticleSystem.Stop();
+        nitroParticleSystem.Stop();
 
         // Start cooldown timer
         yield return new WaitForSeconds(nitroCoolDownTime);

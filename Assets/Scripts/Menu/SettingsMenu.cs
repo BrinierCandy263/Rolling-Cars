@@ -72,6 +72,7 @@ public sealed class SettingsMenu : MenuManager
     /// <param name="ResolutionIndex"></param>
     public void HandleResolutionDropdownOnClickEvent(int ResolutionIndex)
     {
+        Debug.Log(ResolutionIndex);
         Resolution resolution = _resolutions[ResolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
         PlayerPrefs.SetInt("ResoultionIndex", ResolutionIndex);

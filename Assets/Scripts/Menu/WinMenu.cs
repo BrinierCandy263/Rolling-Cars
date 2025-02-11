@@ -29,37 +29,9 @@ public sealed class WinMenu : MenuManager
         Time.timeScale = 0;
 
         _dividerLine.SetActive(false);
-
-        //Switch Color Mode and Win Text on Awake
-        SwitchColorMode();
         SwitchWonText();
 
         elapsedTimeText.text = "Your elapsed time is: " + TextManager.ElapsedTime.ToString("0.00") + " seconds";
-    }
-
-    /// <summary>
-    /// Switch Color Mode Method
-    /// </summary>
-    protected override void SwitchColorMode()
-    {
-        //Checking color mode and changing Win Menu
-        if (MenuManager.colorMode == ColorMode.Light)
-        {
-            backGroundImage.sprite = backGroundLightMode;
-            elapsedTimeText.color = Color.black;
-            winPlayerText.color = Color.black;
-            restartButtonText.color = Color.black;
-            quitButtonText.color = Color.black;
-        }
-
-        else if (MenuManager.colorMode == ColorMode.Dark)
-        {
-            backGroundImage.sprite = backGroundDarkMode;
-            elapsedTimeText.color = Color.white;
-            winPlayerText.color = Color.white;
-            restartButtonText.color = Color.white;
-            quitButtonText.color = Color.white;
-        }
     }
 
     /// <summary>
@@ -90,32 +62,5 @@ public sealed class WinMenu : MenuManager
         MenuManager.SwitchToScene(MenuName.MainMenu);
     }
 
-    /// <summary>
-    /// Handles the on click event from the Restart Button
-    /// </summary>
-    public void HandleRestartButtonOnClickEvent()
-    {
-       //Checking colormode and restarting game
-       if(MenuManager.colorMode == ColorMode.Light)
-       {
-            //Setting to zero game values
-            TextManager.SetZeroValues();
-
-            //Restarting Game
-            MenuManager._initializedWinMessage = false;
-            MenuManager.SwitchToScene(MenuName.GameLightMode);
-            Time.timeScale = 1;
-       }
-
-       else if(MenuManager.colorMode == ColorMode.Dark)
-       {
-            //Setting to zero game values
-            TextManager.SetZeroValues();
-
-            //Restarting Game
-            MenuManager._initializedWinMessage = false;
-            MenuManager.SwitchToScene(MenuName.GameDarkMode);
-            Time.timeScale = 1;
-       }
-    }
+   
 }

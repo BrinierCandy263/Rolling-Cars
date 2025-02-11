@@ -13,28 +13,15 @@ public class MenuManager : MonoBehaviour
     protected static bool _initializedWinMessage = false;
     protected static bool _initializedTrafficLightTextMenu = false;
 
-    protected static ColorMode colorMode;
-
     public static bool InitializedPauseMenu {get => _initializedPauseMenu;}
     public static bool InitializedWinMessage {get => _initializedWinMessage;}
     public static bool InitializedTrafficLightTextMenu {get => _initializedTrafficLightTextMenu;}
 
-    public static ColorMode ColorMode
-    {
-        get { return colorMode; }
-    }
 
     /// <summary>
     /// Handle Quit Button method with Base For PolyMorphism 
     /// </summary>
     public virtual void HandleQuitButtonOnClickEvent()
-    {
-    }
-
-    /// <summary>
-    /// Switch Color Mode method with Base For PolyMorphism
-    /// </summary>
-    protected virtual void SwitchColorMode()
     {
     }
 
@@ -52,16 +39,28 @@ public class MenuManager : MonoBehaviour
                     SceneManager.LoadScene("MainMenu");
                     break;
                 }
-            case (MenuName.GameLightMode):
+            case (MenuName.MapSelector):
                 {
-                    //Go to Game White Mode Scene
-                    SceneManager.LoadScene("Test");
+                    //Go to MainMenu scene
+                    SceneManager.LoadScene("Map_Selector");
                     break;
                 }
-            case (MenuName.GameDarkMode):
+            case (MenuName.Level1):
                 {
-                    //Go to Game Black Mode Scene
-                    SceneManager.LoadScene("Test");
+                    //Go to Game White Mode Scene
+                    SceneManager.LoadScene("Level1");
+                    break;
+                }
+            case (MenuName.Level2):
+                {
+                    //Go to Game White Mode Scene
+                    SceneManager.LoadScene("Level2");
+                    break;
+                }
+            case (MenuName.Level3):
+                {
+                    //Go to Game White Mode Scene
+                    SceneManager.LoadScene("Level3");
                     break;
                 }
             case (MenuName.Settings):
