@@ -39,10 +39,23 @@ public class MenuManager : MonoBehaviour
                     SceneManager.LoadScene("MainMenu");
                     break;
                 }
+            
             case (MenuName.MapSelector):
                 {
                     //Go to MainMenu scene
                     SceneManager.LoadScene("Map_Selector");
+                    break;
+                }
+            case (MenuName.Car1ChooseMenu):
+                {
+                    //Go to MainMenu scene
+                    SceneManager.LoadScene("Car1ChooseMenu");
+                    break;
+                }
+            case (MenuName.Car2ChooseMenu):
+                {
+                    //Go to MainMenu scene
+                    SceneManager.LoadScene("Car2ChooseMenu");
                     break;
                 }
             case (MenuName.Level1):

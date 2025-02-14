@@ -22,7 +22,7 @@ public sealed class MainMenu : MenuManager
     public void HandlePlayButtonOnClickEvent()
     {
         TextManager.SetZeroValues();
-        MenuManager.SwitchToScene(MenuName.MapSelector);
+        MenuManager.SwitchToScene(MenuName.Car1ChooseMenu);
     }
 
     /// <summary>
