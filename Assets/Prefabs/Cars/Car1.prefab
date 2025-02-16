@@ -4856,7 +4856,7 @@ GameObject:
   - component: {fileID: 8873351437383909778}
   m_Layer: 6
   m_Name: Car1
-  m_TagString: Car1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4946,11 +4946,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fe69425433354be4bcfaf99c7fb29d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  driftFactor: 0.33
-  accelerationFactor: 28.75
-  turnFactor: 2.55
-  maxSpeed: 27
-  nitroBoost: 1.5
 --- !u!50 &3084666731321476878
 Rigidbody2D:
   serializedVersion: 4
@@ -5066,8 +5061,7 @@ MonoBehaviour:
   nitroActivationButton: 107
   nitroDuration: 5
   nitroCoolDownTime: 20
-  leftWheelParticleSystem: {fileID: 665311255169824848}
-  rightWheelParticleSystem: {fileID: 435421325572769222}
+  nitroParticleSystem: {fileID: 0}
 --- !u!114 &8873351437383909778
 MonoBehaviour:
   m_ObjectHideFlags: 0

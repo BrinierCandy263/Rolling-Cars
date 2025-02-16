@@ -3,21 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public sealed class CarCameraController : MonoBehaviour
+public class CarCameraController : MonoBehaviour
 {
-    private CinemachineVirtualCamera _camera;
-    private Rigidbody2D _rb;
-    private TopDownCarController _topDownCarController;
+    protected CinemachineVirtualCamera _camera;
+    protected Rigidbody2D _rb;
+    protected TopDownCarController _topDownCarController;
 
-    [SerializeField] private GameObject _followingObject;
     [SerializeField] private float minFOV;
     [SerializeField] private float maxFOV;
 
     void Awake()
     {
         _camera = GetComponent<CinemachineVirtualCamera>();
-        _rb = _followingObject.GetComponent<Rigidbody2D>();
-        _topDownCarController = _followingObject.GetComponent<TopDownCarController>();
     }
 
     void Update()

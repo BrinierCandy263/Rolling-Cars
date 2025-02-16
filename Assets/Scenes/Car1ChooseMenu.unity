@@ -468,7 +468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carOptions:
   - {fileID: 1164198718282776447, guid: ed96490cb092d4c6b80c68c3e186f619, type: 3}
-  - {fileID: 993659018082758398, guid: 995723b1fc79c4591ad7026bbb29dd5f, type: 3}
+  - {fileID: 993659018082758398, guid: 389fa659b86de4b4aae43adb9cac8a1c, type: 3}
 --- !u!1 &1125230339
 GameObject:
   m_ObjectHideFlags: 0

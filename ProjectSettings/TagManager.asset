@@ -66,3 +66,6 @@ TagManager:
   - name: Car
     uniqueID: 647238969
     locked: 0
+  - name: Decorations
+    uniqueID: 3969074825
+    locked: 0

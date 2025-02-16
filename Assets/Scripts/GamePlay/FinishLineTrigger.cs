@@ -15,7 +15,7 @@ public sealed class FinishLineTrigger : MonoBehaviour
     /// <summary>
     /// Getting textManager from HUD and set text of count of Laps 
     /// </summary>
-    private void Awake()
+    private void Start()
     {
         _textManager = HUD.GetComponent<TextManager>();
 

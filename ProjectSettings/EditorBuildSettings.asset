@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Car2ChooseMenu.unity
     guid: 7ddb70ce69e5e4cbd867b8ce49285ace
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: d603c43004f724b43937b7f86b1d955b
   m_configObjects: {}

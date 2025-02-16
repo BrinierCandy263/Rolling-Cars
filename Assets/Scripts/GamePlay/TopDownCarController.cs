@@ -8,11 +8,13 @@ using UnityEngine;
 /// </summary>
 public class TopDownCarController : MonoBehaviour
 {
-    [SerializeField] private float driftFactor;
-    [SerializeField] private float accelerationFactor;
-    [SerializeField] private float turnFactor;
-    [SerializeField] private float maxSpeed;
-    [SerializeField] private float nitroBoost;
+    [SerializeField] private float _driftFactor;
+    [SerializeField] private float _accelerationFactor;
+    [SerializeField] private float _turnFactor;
+    [SerializeField] private float _maxSpeed;
+    [SerializeField] private float _nitroBoost;
+
+    public float MaxSpeed {get => _maxSpeed;}
 
     private NitroSystemController _nitroSystemController;
 
@@ -22,8 +24,6 @@ public class TopDownCarController : MonoBehaviour
     private float _velocityVsUp = 0;
 
     private Rigidbody2D _rb;
-
-    public float MaxSpeed {get => maxSpeed;}
 
     private void Awake()
     {
@@ -46,26 +46,26 @@ public class TopDownCarController : MonoBehaviour
     /// </summary>
     private void ApplyEngineForce()
     {
-        if(_nitroSystemController.IsNitroActive) _rb.AddForce(transform.up * _accelerationInput * accelerationFactor * nitroBoost
+        if(_nitroSystemController.IsNitroActive) _rb.AddForce(transform.up * _accelerationInput * _accelerationFactor * _nitroBoost
         , ForceMode2D.Force);
 
          // Caculate how much "forward" we are going in terms of the direction of our velocity
         _velocityVsUp = Vector2.Dot(transform.up, _rb.velocity);
 
         //Limit so we cannot go faster than the max speed in the "forward" 
-        if (_velocityVsUp > maxSpeed && _accelerationInput > 0) return;
+        if (_velocityVsUp > _maxSpeed && _accelerationInput > 0) return;
 
         //Limit so we cannot go faster than the 50% of max speed in the "reverse" direction 
-        if (_velocityVsUp < -maxSpeed * 0.5f && _accelerationInput < 0) return;
+        if (_velocityVsUp < -_maxSpeed * 0.5f && _accelerationInput < 0) return;
 
         // Limit so we cannot go faster in any direction while accelerating
-        if (_rb.velocity.sqrMagnitude > maxSpeed * maxSpeed && _accelerationInput > 0) return;
+        if (_rb.velocity.sqrMagnitude > _maxSpeed * _maxSpeed && _accelerationInput > 0) return;
 
         //Calculate drag
         _rb.drag = _accelerationInput == 0 ? Mathf.Lerp(_rb.drag, 2.3f, Time.fixedDeltaTime * 3f) : 0f;
         
         // Create a force for the engine Vector2D
-        Vector2 engineForceVector = transform.up * _accelerationInput * accelerationFactor;        
+        Vector2 engineForceVector = transform.up * _accelerationInput * _accelerationFactor;        
         // Аpply force and pushes the car 
         _rb.AddForce(engineForceVector, ForceMode2D.Force);
     }
@@ -80,7 +80,7 @@ public class TopDownCarController : MonoBehaviour
         minSpeedBeforeTurningFactor = Mathf.Clamp01(minSpeedBeforeTurningFactor);
 
         //Update the rotation angle based on input
-        _rotationAngle -= _steeringInput * turnFactor * minSpeedBeforeTurningFactor;
+        _rotationAngle -= _steeringInput * _turnFactor * minSpeedBeforeTurningFactor;
 
         //Apply steering by rotating the car object
         _rb.MoveRotation(_rotationAngle);
@@ -125,7 +125,7 @@ public class TopDownCarController : MonoBehaviour
         Vector2 forwardVelocity = transform.up * Vector2.Dot(_rb.velocity, transform.up);
         Vector2 rightVelocity = transform.right * Vector2.Dot(_rb.velocity, transform.right);
 
-        _rb.velocity = forwardVelocity + rightVelocity * driftFactor;
+        _rb.velocity = forwardVelocity + rightVelocity * _driftFactor;
     }
     
     /// <summary>
