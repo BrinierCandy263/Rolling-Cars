@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5841422293360440120}
   - component: {fileID: 5841422293360440121}
   m_Layer: 0
-  m_Name: Style3JetEngine3
+  m_Name: Nitro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

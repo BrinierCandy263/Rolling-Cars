@@ -12,6 +12,7 @@ public class TopDownCarController : MonoBehaviour
     [SerializeField] private float _accelerationFactor;
     [SerializeField] private float _turnFactor;
     [SerializeField] private float _maxSpeed;
+    [SerializeField] private float _maxSpeedForNitro;
     [SerializeField] private float _nitroBoost;
 
     public float MaxSpeed {get => _maxSpeed;}
@@ -46,11 +47,15 @@ public class TopDownCarController : MonoBehaviour
     /// </summary>
     private void ApplyEngineForce()
     {
-        if(_nitroSystemController.IsNitroActive) _rb.AddForce(transform.up * _accelerationInput * _accelerationFactor * _nitroBoost
-        , ForceMode2D.Force);
 
          // Caculate how much "forward" we are going in terms of the direction of our velocity
         _velocityVsUp = Vector2.Dot(transform.up, _rb.velocity);
+
+        if(_nitroSystemController.IsNitroActive) 
+        {
+             if (_velocityVsUp > _maxSpeedForNitro && _accelerationInput > 0) return;
+            _rb.AddForce(transform.up * _accelerationInput * _accelerationFactor * _nitroBoost, ForceMode2D.Force);
+        }
 
         //Limit so we cannot go faster than the max speed in the "forward" 
         if (_velocityVsUp > _maxSpeed && _accelerationInput > 0) return;

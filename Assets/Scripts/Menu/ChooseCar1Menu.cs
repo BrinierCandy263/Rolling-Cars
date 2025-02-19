@@ -8,18 +8,19 @@ using UnityEngine.SceneManagement;
 public sealed class ChooseCar1Menu : MenuManager
 {
     [SerializeField] private List<GameObject> carOptions;
+    [SerializeField] private Image carImage;
 
-    private static GameObject _choosedCar;
+    private static GameObject _choosedCar = null;
     public static GameObject ChoosedCar {get => _choosedCar;}
 
     public void HandleChooseButton(int choosedCarIndex)
     {
-        Debug.Log(choosedCarIndex);
+        carImage.sprite = carOptions[choosedCarIndex].GetComponent<SpriteRenderer>().sprite;
         _choosedCar = carOptions[choosedCarIndex];
     }
 
     public void HandleSelectButton()
     {
-        MenuManager.SwitchToScene(MenuName.Car2ChooseMenu);
+       if(_choosedCar != null) MenuManager.SwitchToScene(MenuName.Car2ChooseMenu);
     }
 }
