@@ -16,6 +16,11 @@ public class TopDownCarController : MonoBehaviour
     [SerializeField] private float _nitroBoost;
 
     public float MaxSpeed {get => _maxSpeed;}
+    public float DriftFactor {get => _driftFactor;}
+    public float AccelerationFactor {get => _accelerationFactor;}
+    public float TurnFactor {get => _turnFactor;}
+    public float MaxSpeedForNitro {get => _maxSpeedForNitro;}
+    public float NitroBoost {get => _nitroBoost;}
 
     private NitroSystemController _nitroSystemController;
 

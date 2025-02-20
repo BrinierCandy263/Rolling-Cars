@@ -9,7 +9,7 @@ public sealed class CarSpawner : MonoBehaviour
 
     private void Awake()
     {
-        GameObject car1 = Instantiate(ChooseCar1Menu.ChoosedCar , _car1SpawningPosition , Quaternion.identity);
-        GameObject car2 = Instantiate(ChooseCar2Menu.ChoosedCar , _car2SpawningPosition , Quaternion.identity);
+        GameObject car1 = Instantiate(ChooseCarMenu1.ChoosedCar , _car1SpawningPosition , Quaternion.identity);
+        GameObject car2 = Instantiate(ChooseCarMenu2.ChoosedCar , _car2SpawningPosition , Quaternion.identity);
     }
 }

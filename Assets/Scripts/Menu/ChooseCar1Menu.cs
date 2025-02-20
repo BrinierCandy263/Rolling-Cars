@@ -3,24 +3,41 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine.UI;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public sealed class ChooseCar1Menu : MenuManager
+public sealed class ChooseCarMenu1 : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> carOptions;
+ [SerializeField] private List<GameObject> carOptions;
+
+    [SerializeField] private Slider driftSlider;
+    [SerializeField] private Slider accelerationSlider;
+    [SerializeField] private Slider turnFactorSlider;
+    [SerializeField] private Slider nitroBoost;
     [SerializeField] private Image carImage;
 
-    private static GameObject _choosedCar = null;
+    protected static GameObject _choosedCar = null;
     public static GameObject ChoosedCar {get => _choosedCar;}
 
     public void HandleChooseButton(int choosedCarIndex)
     {
-        carImage.sprite = carOptions[choosedCarIndex].GetComponent<SpriteRenderer>().sprite;
         _choosedCar = carOptions[choosedCarIndex];
+        SpriteRenderer carSpriteRenderer = _choosedCar.GetComponent<SpriteRenderer>();
+        TopDownCarController carInputHandler = GetCarInputHandler();
+
+        carImage.sprite = carSpriteRenderer.sprite;
+        driftSlider.value = carInputHandler.DriftFactor;
+        accelerationSlider.value = carInputHandler.AccelerationFactor;
+        turnFactorSlider.value = carInputHandler.TurnFactor;
+        nitroBoost.value = carInputHandler.NitroBoost;
+
+    }
+
+    private TopDownCarController GetCarInputHandler()
+    {
+        return _choosedCar.GetComponent<CarInputHandler>();
     }
 
     public void HandleSelectButton()
     {
-       if(_choosedCar != null) MenuManager.SwitchToScene(MenuName.Car2ChooseMenu);
+        if(_choosedCar != null) MenuManager.SwitchToScene(MenuName.Car2ChooseMenu);
     }
 }
