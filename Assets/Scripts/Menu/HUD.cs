@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 /// <summary>
 /// HUD script // The HUD of game which
@@ -29,10 +26,5 @@ public sealed class HUD : MenuManager
 
         //Listening for Escape Button and Switching to Pause Menu
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button9) || Input.GetKeyDown(KeyCode.Joystick2Button9)) MenuManager.SwitchToScene(MenuName.Pause);
-
-        //Switching cursor with checking
-        Cursor.visible = MenuManager.InitializedPauseMenu ||
-                        MenuManager.InitializedWinMessage ||
-                        MenuManager.InitializedTrafficLightTextMenu;
     }
 }

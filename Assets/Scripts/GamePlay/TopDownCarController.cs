@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -8,19 +6,19 @@ using UnityEngine;
 /// </summary>
 public class TopDownCarController : MonoBehaviour
 {
-    [SerializeField] private float _driftFactor;
-    [SerializeField] private float _accelerationFactor;
-    [SerializeField] private float _turnFactor;
-    [SerializeField] private float _maxSpeed;
-    [SerializeField] private float _maxSpeedForNitro;
-    [SerializeField] private float _nitroBoost;
+    [SerializeField] private float driftFactor;
+    [SerializeField] private float accelerationFactor;
+    [SerializeField] private float turnFactor;
+    [SerializeField] private float maxSpeed;
+    [SerializeField] private float maxSpeedForNitro;
+    [SerializeField] private float nitroBoost;
 
-    public float MaxSpeed {get => _maxSpeed;}
-    public float DriftFactor {get => _driftFactor;}
-    public float AccelerationFactor {get => _accelerationFactor;}
-    public float TurnFactor {get => _turnFactor;}
-    public float MaxSpeedForNitro {get => _maxSpeedForNitro;}
-    public float NitroBoost {get => _nitroBoost;}
+    public float MaxSpeed {get => maxSpeed;}
+    public float DriftFactor {get => driftFactor;}
+    public float AccelerationFactor {get => accelerationFactor;}
+    public float TurnFactor {get => turnFactor;}
+    public float MaxSpeedForNitro {get => maxSpeedForNitro;}
+    public float NitroBoost {get => nitroBoost;}
 
     private NitroSystemController _nitroSystemController;
 
@@ -58,24 +56,24 @@ public class TopDownCarController : MonoBehaviour
 
         if(_nitroSystemController.IsNitroActive) 
         {
-             if (_velocityVsUp > _maxSpeedForNitro && _accelerationInput > 0) return;
-            _rb.AddForce(transform.up * _accelerationInput * _accelerationFactor * _nitroBoost, ForceMode2D.Force);
+             if (_velocityVsUp > maxSpeedForNitro && _accelerationInput > 0) return;
+            _rb.AddForce(transform.up * _accelerationInput * accelerationFactor * nitroBoost, ForceMode2D.Force);
         }
 
         //Limit so we cannot go faster than the max speed in the "forward" 
-        if (_velocityVsUp > _maxSpeed && _accelerationInput > 0) return;
+        if (_velocityVsUp > maxSpeed && _accelerationInput > 0) return;
 
         //Limit so we cannot go faster than the 50% of max speed in the "reverse" direction 
-        if (_velocityVsUp < -_maxSpeed * 0.5f && _accelerationInput < 0) return;
+        if (_velocityVsUp < -maxSpeed * 0.5f && _accelerationInput < 0) return;
 
         // Limit so we cannot go faster in any direction while accelerating
-        if (_rb.velocity.sqrMagnitude > _maxSpeed * _maxSpeed && _accelerationInput > 0) return;
+        if (_rb.velocity.sqrMagnitude > maxSpeed * maxSpeed && _accelerationInput > 0) return;
 
         //Calculate drag
         _rb.drag = _accelerationInput == 0 ? Mathf.Lerp(_rb.drag, 2.3f, Time.fixedDeltaTime * 3f) : 0f;
         
         // Create a force for the engine Vector2D
-        Vector2 engineForceVector = transform.up * _accelerationInput * _accelerationFactor;        
+        Vector2 engineForceVector = transform.up * _accelerationInput * accelerationFactor;        
         // Аpply force and pushes the car 
         _rb.AddForce(engineForceVector, ForceMode2D.Force);
     }
@@ -90,7 +88,7 @@ public class TopDownCarController : MonoBehaviour
         minSpeedBeforeTurningFactor = Mathf.Clamp01(minSpeedBeforeTurningFactor);
 
         //Update the rotation angle based on input
-        _rotationAngle -= _steeringInput * _turnFactor * minSpeedBeforeTurningFactor;
+        _rotationAngle -= _steeringInput * turnFactor * minSpeedBeforeTurningFactor;
 
         //Apply steering by rotating the car object
         _rb.MoveRotation(_rotationAngle);
@@ -135,7 +133,7 @@ public class TopDownCarController : MonoBehaviour
         Vector2 forwardVelocity = transform.up * Vector2.Dot(_rb.velocity, transform.up);
         Vector2 rightVelocity = transform.right * Vector2.Dot(_rb.velocity, transform.right);
 
-        _rb.velocity = forwardVelocity + rightVelocity * _driftFactor;
+        _rb.velocity = forwardVelocity + rightVelocity * driftFactor;
     }
     
     /// <summary>

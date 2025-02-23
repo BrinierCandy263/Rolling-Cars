@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -10,10 +8,10 @@ using UnityEngine;
 public class TextManager : MonoBehaviour
 {
     //declare fields
-    private static float elapsedTime = 0;
-    private static int countOfLapsCar1 = 0;
-    private static int countOfLapsCar2 = 0;
-    private static int maxCountOfLaps = 3;
+    private static float _elapsedTime = 0;
+    private static int _countOfLapsCar1 = 0;
+    private static int _countOfLapsCar2 = 0;
+    private static int _maxCountOfLaps = 3;
 
     public Text elapsedTimeText;
     public Text car1LapsText;
@@ -22,26 +20,26 @@ public class TextManager : MonoBehaviour
     //declare Properties
     public static float ElapsedTime
     {
-        get { return elapsedTime; }
-        set { elapsedTime = value; }
+        get { return _elapsedTime; }
+        set { _elapsedTime = value; }
     }
 
     public static int MaxCountOfLaps
     {
-        get { return maxCountOfLaps; }
-        set { maxCountOfLaps = value; }
+        get { return _maxCountOfLaps; }
+        set { _maxCountOfLaps = value; }
     }
 
     public static int CountOfLapsCar1
     {
-        get { return countOfLapsCar1; }
-        set { countOfLapsCar1 = value; }
+        get { return _countOfLapsCar1; }
+        set { _countOfLapsCar1 = value; }
     }
 
     public static int CountOfLapsCar2
     {
-        get { return countOfLapsCar2; }
-        set { countOfLapsCar2 = value; }
+        get { return _countOfLapsCar2; }
+        set { _countOfLapsCar2 = value; }
     }
 
     /// <summary>
@@ -50,9 +48,9 @@ public class TextManager : MonoBehaviour
     public static void SetZeroValues()
     {
         //Setting values to zero
-        elapsedTime = 0;
-        countOfLapsCar1 = 0;
-        countOfLapsCar2 = 0;
+        _elapsedTime = 0;
+        _countOfLapsCar1 = 0;
+        _countOfLapsCar2 = 0;
     }
 
     /// <summary>
@@ -61,8 +59,8 @@ public class TextManager : MonoBehaviour
     public void RunTimer()
     {
         //Running Timer
-        elapsedTime += Time.deltaTime;
-        elapsedTimeText.text = elapsedTime.ToString("0.00");
+        _elapsedTime += Time.deltaTime;
+        elapsedTimeText.text = _elapsedTime.ToString("0.00");
     }
 
     /// <summary>

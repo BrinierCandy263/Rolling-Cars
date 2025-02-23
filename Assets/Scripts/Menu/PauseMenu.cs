@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
 using UnityEngine;
 
 /// <summary>
@@ -44,6 +42,7 @@ public sealed class PauseMenu : MenuManager
         // unpause game and destroy menu
         Time.timeScale = 1;
         _dividerLine.SetActive(true);
+        Cursor.visible = false;
 
         Destroy(gameObject);
         MenuManager._initializedPauseMenu = false;

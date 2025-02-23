@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -12,7 +10,6 @@ public sealed class MainMenu : MenuManager
 
     private void Awake()
     {
-        Cursor.visible = true;
         _textManager = new TextManager();
     }
 

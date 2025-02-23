@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
@@ -37,6 +35,7 @@ public class MenuManager : MonoBehaviour
                 {
                     //Go to MainMenu scene
                     SceneManager.LoadScene("MainMenu");
+                    Cursor.visible = true;
                     break;
                 }
             
@@ -44,42 +43,35 @@ public class MenuManager : MonoBehaviour
                 {
                     //Go to MainMenu scene
                     SceneManager.LoadScene("Map_Selector");
+                    Cursor.visible = true;
                     break;
                 }
             case (MenuName.Car1ChooseMenu):
                 {
                     //Go to MainMenu scene
                     SceneManager.LoadScene("Car1ChooseMenu");
+                    Cursor.visible = true;
                     break;
                 }
             case (MenuName.Car2ChooseMenu):
                 {
                     //Go to MainMenu scene
                     SceneManager.LoadScene("Car2ChooseMenu");
+                    Cursor.visible = true;
                     break;
                 }
             case (MenuName.Level1):
                 {
                     //Go to Game White Mode Scene
                     SceneManager.LoadScene("Level1");
-                    break;
-                }
-            case (MenuName.Level2):
-                {
-                    //Go to Game White Mode Scene
-                    SceneManager.LoadScene("Level2");
-                    break;
-                }
-            case (MenuName.Level3):
-                {
-                    //Go to Game White Mode Scene
-                    SceneManager.LoadScene("Level3");
+                    Cursor.visible = false;
                     break;
                 }
             case (MenuName.Settings):
                 {
                     //Go to Settings Menu
                     SceneManager.LoadScene("Settings");
+                    Cursor.visible = true;
                     break;
                 }
             case MenuName.Pause:
@@ -89,6 +81,7 @@ public class MenuManager : MonoBehaviour
                         //Instantiate prefab of PauseMenu
                         Object.Instantiate(Resources.Load("PauseMenu"));
                         _initializedPauseMenu = true;
+                        Cursor.visible = true;
                     }
                     break;
                 }
@@ -98,10 +91,9 @@ public class MenuManager : MonoBehaviour
                     //Instantiate prefab of WinMessage
                     Object.Instantiate(Resources.Load("WinMessage"));
                     _initializedWinMessage = true;
+                    Cursor.visible = true;
                     break;
                 }
-        
-                
         }
 
     }

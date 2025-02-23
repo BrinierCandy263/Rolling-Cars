@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 /// <summary>
 /// TrafficLightTextMenu script // Shows before game and give to players time
@@ -23,7 +20,6 @@ public class TrafficLightTextMenu : MenuManager
     /// </summary>
     void Start()
     {
-        Cursor.visible = true;
         _car1 = GameObject.FindGameObjectWithTag("Car1");
         _car2 = GameObject.FindGameObjectWithTag("Car2");
 
@@ -40,22 +36,22 @@ public class TrafficLightTextMenu : MenuManager
         //Setting Start timer
         trafficLightTimer = gameObject.AddComponent<Timer>();
         trafficLightTimer.Duration = 3f;
+
+        trafficLightTimer.OnTimerFinished += EnableHUDAndCars;
         trafficLightTimer.Run();
     }
 
-    /// <summary>
-    /// Checking timer and on Hud
+        /// <summary>
+    /// Method called when the timer finishes.
     /// </summary>
-    void Update()
-    {   
-        //Checking and activating HUD and cars
-        if (trafficLightTimer.Finished)
-        {
-            HUD.SetActive(true);
-            _initializedTrafficLightTextMenu = false;
+    private void EnableHUDAndCars()
+    {
+        HUD.SetActive(true);
+        _initializedTrafficLightTextMenu = false;
 
-            _carInputHandler.enabled = true;
-            _carInputHandler2.enabled = true;
-        }
+        _carInputHandler.enabled = true;
+        _carInputHandler2.enabled = true;
+        
+        Destroy(trafficLightTimer);
     }
 }

@@ -1948,10 +1948,10 @@ ParticleSystem:
         m_NumAlphaKeys: 2
   UVModule:
     serializedVersion: 2
-    enabled: 0
+    enabled: 1
     mode: 1
-    timeMode: 0
-    fps: 0.5
+    timeMode: 2
+    fps: 0.0001
     frameOverTime:
       serializedVersion: 2
       minMaxState: 1
@@ -2007,8 +2007,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startFrame:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
+      minMaxState: 3
+      scalar: 0.71428573
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -2070,6 +2070,10 @@ ParticleSystem:
     - sprite: {fileID: 21300000, guid: 20bf656e157b44f66a1c51292d2a60b4, type: 3}
     - sprite: {fileID: 21300000, guid: f6e189c3e221e4c4fb3e7bf72f11d0b1, type: 3}
     - sprite: {fileID: 21300000, guid: e72c030c64e5042bdb24b9cdddfb4b00, type: 3}
+    - sprite: {fileID: 21300000, guid: 172d24443ea49467ba2aed87108e77a2, type: 3}
+    - sprite: {fileID: 21300000, guid: 822550283b727445894e5449f765fe82, type: 3}
+    - sprite: {fileID: 21300000, guid: 3562d119825234e9a8bc5244a219a94e, type: 3}
+    - sprite: {fileID: 21300000, guid: d798d40bc1b634ad4ae81f1dd534a0f8, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -6793,10 +6797,10 @@ ParticleSystem:
         m_NumAlphaKeys: 2
   UVModule:
     serializedVersion: 2
-    enabled: 0
+    enabled: 1
     mode: 1
-    timeMode: 0
-    fps: 0.5
+    timeMode: 2
+    fps: 0.0001
     frameOverTime:
       serializedVersion: 2
       minMaxState: 1
@@ -6852,8 +6856,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startFrame:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
+      minMaxState: 3
+      scalar: 0.71428573
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -6915,6 +6919,10 @@ ParticleSystem:
     - sprite: {fileID: 21300000, guid: 20bf656e157b44f66a1c51292d2a60b4, type: 3}
     - sprite: {fileID: 21300000, guid: f6e189c3e221e4c4fb3e7bf72f11d0b1, type: 3}
     - sprite: {fileID: 21300000, guid: e72c030c64e5042bdb24b9cdddfb4b00, type: 3}
+    - sprite: {fileID: 21300000, guid: 172d24443ea49467ba2aed87108e77a2, type: 3}
+    - sprite: {fileID: 21300000, guid: 822550283b727445894e5449f765fe82, type: 3}
+    - sprite: {fileID: 21300000, guid: 3562d119825234e9a8bc5244a219a94e, type: 3}
+    - sprite: {fileID: 21300000, guid: d798d40bc1b634ad4ae81f1dd534a0f8, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
