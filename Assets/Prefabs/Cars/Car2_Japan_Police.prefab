@@ -241,12 +241,12 @@ SpriteRenderer:
   m_SortingLayerID: 647238969
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 665595051, guid: 6428340f1a88d4744a963a076faa80a8, type: 3}
+  m_Sprite: {fileID: -1582127198, guid: 750a2c8f6ba324344846e9ac6c6d4af3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 1
   m_DrawMode: 0
-  m_Size: {x: 2.2904415, y: 5.14}
+  m_Size: {x: 5.93, y: 12.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -343,8 +343,8 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.87, y: 12.4}
-    newSize: {x: 2.2904415, y: 5.14}
+    oldSize: {x: 5.93, y: 12.5}
+    newSize: {x: 5.93, y: 12.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -415,12 +415,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bb5f7243db764a089a0b129ce46faed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _driftFactor: 0.95
-  _accelerationFactor: 28.5
-  _turnFactor: 3
-  _maxSpeed: 60
-  _maxSpeedForNitro: 80
-  _nitroBoost: 1.5
+  driftFactor: 0
+  accelerationFactor: 0
+  turnFactor: 0
+  maxSpeed: 0
+  maxSpeedForNitro: 0
+  nitroBoost: 0
 --- !u!1 &2078446871324850055
 GameObject:
   m_ObjectHideFlags: 0
