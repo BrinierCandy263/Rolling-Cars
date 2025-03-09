@@ -257,12 +257,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fe69425433354be4bcfaf99c7fb29d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _driftFactor: 0.95
-  _accelerationFactor: 28.5
-  _turnFactor: 3
-  _maxSpeed: 60
-  _maxSpeedForNitro: 80
-  _nitroBoost: 1.5
+  driftFactor: 0.95
+  accelerationFactor: 28.5
+  turnFactor: 3
+  maxSpeed: 60
+  maxSpeedForNitro: 1.5
+  nitroBoost: 80
 --- !u!1 &3617131798967661189
 GameObject:
   m_ObjectHideFlags: 0
