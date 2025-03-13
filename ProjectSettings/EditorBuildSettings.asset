@@ -17,13 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Settings.unity
     guid: 39288c148d8ef471aa7f4587a07b77b6
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Level_Test1.unity
     guid: 1afbd9cdef0d747f6a62bb46e7b1d7f6
   - enabled: 1
     path: Assets/Scenes/Map_Selector.unity
     guid: 913b52693914c4c77a4f20f792b44a3c
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Level_Test2.unity
     guid: 99f6268063f704a72bc720e9c2b4fa6f
   - enabled: 1
@@ -35,4 +35,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Car2ChooseMenu.unity
     guid: 0fc9f57099d9e48519210b955fce38d5
+  - enabled: 1
+    path: Assets/Scenes/MultiplayerMainMenu.unity
+    guid: 3d8a9d71f6aeb4214ad388d04b4e508a
+  - enabled: 1
+    path: Assets/Scenes/Level1_Multiplayer.unity
+    guid: 4ae7268d155a84f078d85ad0d5d0b36b
   m_configObjects: {}
