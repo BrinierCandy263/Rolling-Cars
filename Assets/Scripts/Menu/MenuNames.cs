@@ -8,7 +8,11 @@ public enum MenuName
     Car1ChooseMenu,
     Car2ChooseMenu,
     Level1,
+    Level2,
+    Level3,
+    Level4,
     Pause,
     Settings,
-    WinMessage
+    WinMessage,
+    MultiPlayerOnlineMenu
 }

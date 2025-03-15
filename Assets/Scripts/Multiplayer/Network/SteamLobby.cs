@@ -21,6 +21,7 @@ public class SteamLobby : MonoBehaviour
 
     public GameObject hostButton;
     public Text lobbyNameText;
+    public Text numberOfPlayersInLobbyText;
 
     private void Start()
     {
@@ -55,12 +56,18 @@ public class SteamLobby : MonoBehaviour
         Debug.Log("Request to join lobby");
         SteamMatchmaking.JoinLobby(callBack.m_steamIDLobby);
     }
+    
+    public void OnPlayerCountChanged(int oldCount, int newCount)
+    {
+        lobbyNameText.text = $"{newCount} players in lobby";
+    }
 
     private void OnLobbyEntered(LobbyEnter_t callback)
     {
         hostButton.SetActive(false);
         CurrentLobbyID = callback.m_ulSteamIDLobby;
         lobbyNameText.gameObject.SetActive(true);
+        numberOfPlayersInLobbyText.gameObject.SetActive(true);
         lobbyNameText.text = SteamMatchmaking.GetLobbyData(new CSteamID(callback.m_ulSteamIDLobby) , "name");
         if(NetworkServer.active) return;
 

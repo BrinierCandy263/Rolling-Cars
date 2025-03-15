@@ -23,6 +23,14 @@ public sealed class MainMenu : MenuManager
     }
 
     /// <summary>
+    /// Handles the on click event from the play button
+    /// </summary>
+    public void HandlePlayOnlineButtonOnClickEvent()
+    {
+        MenuManager.SwitchToScene(MenuName.MultiPlayerOnlineMenu);
+    }
+
+    /// <summary>
     /// Handles the on click event from the settings button
     /// </summary>
     public void HandleSettingsButtonOnClickEvent()

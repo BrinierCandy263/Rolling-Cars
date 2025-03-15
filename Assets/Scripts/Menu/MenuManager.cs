@@ -38,6 +38,13 @@ public class MenuManager : MonoBehaviour
                     Cursor.visible = true;
                     break;
                 }
+            case (MenuName.MultiPlayerOnlineMenu):
+                {
+                    //Go to MainMenu scene
+                    SceneManager.LoadScene("MultiplayerMainMenu");
+                    Cursor.visible = true;
+                    break;
+                }
             
             case (MenuName.MapSelector):
                 {
@@ -67,6 +74,27 @@ public class MenuManager : MonoBehaviour
                     Cursor.visible = false;
                     break;
                 }
+            case (MenuName.Level2):
+                {
+                    //Go to Game White Mode Scene
+                    SceneManager.LoadScene("Level2");
+                    Cursor.visible = false;
+                    break;
+                }
+            case (MenuName.Level3):
+                {
+                    //Go to Game White Mode Scene
+                    SceneManager.LoadScene("Level3");
+                    Cursor.visible = false;
+                    break;
+                }
+            case (MenuName.Level4):
+                {
+                    //Go to Game White Mode Scene
+                    SceneManager.LoadScene("Level4");
+                    Cursor.visible = false;
+                    break;
+                }
             case (MenuName.Settings):
                 {
                     //Go to Settings Menu
@@ -76,7 +104,7 @@ public class MenuManager : MonoBehaviour
                 }
             case MenuName.Pause:
                 {
-                    if (!_initializedPauseMenu)
+                    if (!_initializedPauseMenu && !_initializedWinMessage)
                     {
                         //Instantiate prefab of PauseMenu
                         Object.Instantiate(Resources.Load("PauseMenu"));
